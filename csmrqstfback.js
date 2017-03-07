@@ -26,7 +26,7 @@ module.exports = function (ctx, req, res) {
       var slack = require('slack-notify')(ctx.secrets.SLACK_LP_URL);
       slack.send({
       channel: '#general',
-      text: 'SOMEBODY CLICKED ON PAGE',
+      text: 'Hi, my landing page was just visited.',
       });
         res.writeHead(200, { 'Content-Type': 'text/html' });
         return res.end(require('ejs').render(get_details.stringify(), { logo_url: logo_url, ctx: ctx }));
